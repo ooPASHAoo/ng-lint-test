@@ -6,8 +6,28 @@
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
+    "e2e": "ng e2e",
+    "prettier": "prettier src/**/*.ts",
+    "prettier:fix": "prettier --write src/**/*.ts",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "lint:fix": "ng lint --fix",
+    "lint-styles:fix": "stylelint 'src/**/*.scss' --fix",
+    "lint-styles": "stylelint 'src**/*.scss'"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "npm run prettier:fix && npm run lint:fix && npm run lint-styles:fix && npm run build"
+    }
+  },
+  "lint-staged": {
+    "*.ts": [
+      "prettier --write",
+      "ng lint --fix"
+    ],
+    "*.scss": [
+      "stylelint --fix"
+    ]
   },
   "private": true,
   "dependencies": {
