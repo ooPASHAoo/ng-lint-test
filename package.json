@@ -9,8 +9,8 @@
     "e2e": "ng e2e",
     "prettier": "prettier src/**/*.ts",
     "prettier:fix": "prettier --write src/**/*.ts",
-    "lint": "ng lint",
-    "lint:fix": "ng lint --fix",
+    "lint": "ng lint --files='src/app/**/*.ts'",
+    "lint:fix": "ng lint --files='src/app/**/*.ts' --fix",
     "lint-styles:fix": "stylelint 'src/**/*.scss' --fix",
     "lint-styles": "stylelint 'src**/*.scss'"
   },
@@ -22,10 +22,10 @@
   },
   "lint-staged": {
     "*.ts": [
-      "prettier --write",
-      "ng lint --fix"
+      "prettier --write"
     ],
     "*.scss": [
+      "prettier --write",
       "stylelint --fix"
     ]
   },

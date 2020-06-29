@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "linttest4"
+    }
+  },
+  "defaultProject": "linttest4",
+  "cli": {
+    "analytics": false
+  }
 }
