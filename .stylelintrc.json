@@ -1,0 +1,13 @@
+{
+  "extends": [
+    "stylelint-config-sass-guidelines",
+    "stylelint-config-rational-order",
+    "stylelint-prettier/recommended"
+  ],
+  "ignoreFiles": [
+    "dist/**/*"
+  ],
+  "rules": {
+    "selector-max-id": 1
+  }
+}
